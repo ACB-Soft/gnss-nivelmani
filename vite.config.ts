@@ -22,8 +22,8 @@ export default defineConfig(() => {
         ],
         manifest: {
           id: './',
-          name: 'GNSS Nivelman Hesabı',
-          short_name: 'GNSS Nivelman',
+          name: 'GNSS Nivelmanı',
+          short_name: 'GNSS Nivelmanı',
           description: 'Dayalı GNSS yükseklik güzergahı dengelemesi ve jeodezik hesap aracı.',
           theme_color: '#0f172a',
           background_color: '#ffffff',
