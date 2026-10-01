@@ -26,7 +26,7 @@ export default defineConfig(() => {
           short_name: 'GNSS Nivelman',
           description: 'Dayalı GNSS yükseklik güzergahı dengelemesi ve jeodezik hesap aracı.',
           theme_color: '#0f172a',
-          background_color: '#f8fafc',
+          background_color: '#ffffff',
           display: 'standalone',
           orientation: 'portrait-primary',
           start_url: './',

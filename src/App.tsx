@@ -102,10 +102,12 @@ export default function App() {
       <header className="bg-slate-900 text-white shadow-md border-b border-slate-800 no-print sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
           <div className="flex items-center justify-between flex-wrap gap-3">
-            <div className="flex items-center space-x-3">
-              <div className="p-2.5 bg-sky-600 text-white rounded-xl shadow-inner flex items-center justify-center">
-                <Layers className="w-5 h-5" />
-              </div>
+            <div className="flex items-center space-x-3.5">
+              <img
+                src="./icon.svg"
+                alt="GNSS Nivelman Logo"
+                className="w-12 h-12 sm:w-14 sm:h-14 object-contain shrink-0 drop-shadow-md hover:scale-105 transition-transform"
+              />
               <div>
                 <h1 className="text-lg sm:text-xl font-bold tracking-tight text-white flex items-center gap-2">
                   <span>GNSS NİVELMANI HESABI</span>
