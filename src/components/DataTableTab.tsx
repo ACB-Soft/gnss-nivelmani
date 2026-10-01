@@ -53,27 +53,6 @@ export const DataTableTab: React.FC<DataTableTabProps> = ({
   const [pasteModalOpen, setPasteModalOpen] = useState(false);
   const [pasteText, setPasteText] = useState('');
 
-  const loadSampleData = () => {
-    // Standard real geodetic sample dataset in Turkey (DOM 30 / Bilecik-Bursa region)
-    setStartKnownH('120.4500');
-    setEndKnownH('135.1200');
-    setToleranceCoef('12');
-    setCrsSystem('itrf3');
-    setCrsDom('30');
-
-    const samplePoints: GNSSPoint[] = [
-      { id: 'RS.01', y: 598859.4975, x: 4434798.9084, h: 158.6000, n: 38.150, knownH: 120.4500 },
-      { id: 'P.02', y: 599426.0361, x: 4434671.4488, h: 161.4556, n: 38.144, knownH: null },
-      { id: 'P.03', y: 600120.5502, x: 4434520.1200, h: 165.2300, n: 38.138, knownH: null },
-      { id: 'P.04', y: 600850.1140, x: 4434310.8800, h: 168.9100, n: 38.130, knownH: null },
-      { id: 'P.05', y: 601600.7800, x: 4434190.4500, h: 171.1200, n: 38.125, knownH: null },
-      { id: 'RS.02', y: 602350.9200, x: 4433980.6000, h: 173.2380, n: 38.118, knownH: 135.1200 }
-    ];
-
-    setPoints(samplePoints);
-    showToast('Örnek nivelman verisi yüklendi!');
-  };
-
   const handleAddRow = () => {
     const nextIdx = points.length + 1;
     const lastPt = points.length > 0 ? points[points.length - 1] : { y: 500000, x: 4400000, h: 100, n: 38 };
@@ -181,13 +160,6 @@ export const DataTableTab: React.FC<DataTableTabProps> = ({
               <Sliders className="w-4 h-4 text-sky-600" />
               <span>Dengeleme Parametreleri ve Tolerans Ayarları</span>
             </h2>
-            <button
-              onClick={loadSampleData}
-              className="px-3 py-1 bg-sky-50 hover:bg-sky-100 text-sky-700 text-xs font-semibold rounded-lg border border-sky-200 transition flex items-center gap-1.5 cursor-pointer"
-            >
-              <FileText className="w-3.5 h-3.5" />
-              <span>Örnek Veri Yükle</span>
-            </button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
@@ -364,9 +336,9 @@ export const DataTableTab: React.FC<DataTableTabProps> = ({
                 <tr>
                   <td colSpan={8} className="py-12 text-center text-slate-400 font-sans">
                     <FileSpreadsheet className="w-8 h-8 text-slate-300 mx-auto mb-2" />
-                    <p className="font-medium text-slate-600">Henüz veri yüklenmedi.</p>
+                    <p className="font-medium text-slate-600">Henüz veri girilmedi.</p>
                     <p className="text-xs text-slate-400 mt-1">
-                      Yukarıdaki <strong>"Örnek Veri Yükle"</strong>, <strong>"Excel'den Yapıştır"</strong> veya <strong>"Satır Ekle"</strong> butonlarını kullanabilirsiniz.
+                      Yukarıdaki <strong>"Excel'den Yapıştır"</strong> veya <strong>"Satır Ekle"</strong> butonlarını kullanarak veri girişi yapabilirsiniz.
                     </p>
                   </td>
                 </tr>
