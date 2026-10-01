@@ -59,7 +59,7 @@ export const ReportTab: React.FC<ReportTabProps> = ({ results }) => {
                 <strong>Rapor Tarihi:</strong> {today}
               </span>
               <span>
-                <strong>Yazılım:</strong> ACB Maps - GNSS Nivelmanı PWA v1.0
+                <strong>Yazılım:</strong> ACB Maps - GNSS Nivelmanı
               </span>
             </div>
           </div>
@@ -90,7 +90,7 @@ export const ReportTab: React.FC<ReportTabProps> = ({ results }) => {
                 {res.deltaH_real.toFixed(4)} m
               </p>
               <p>
-                <strong>GNSS Ölçülen Kot Farkı (&Sigma;&Delta;h<sub>GNSS</sub>):</strong>{' '}
+                <strong>GNSS Ölçülen Kot Farkı (&Delta;H<sub>GNSS</sub>):</strong>{' '}
                 {res.deltaH_gnss >= 0 ? '+' : ''}
                 {res.deltaH_gnss.toFixed(4)} m
               </p>

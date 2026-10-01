@@ -137,7 +137,7 @@ export const ResultsTab: React.FC<ResultsTabProps> = ({ results, onSwitchToData 
 
         <div className="bg-white p-3.5 sm:p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
           <span className="text-[11px] font-medium text-slate-500 uppercase">
-            GNSS Ölçülen Kot Farkı (&Sigma;&Delta;h<sub>GNSS</sub>)
+            GNSS Ölçülen Kot Farkı (&Delta;H<sub>GNSS</sub>)
           </span>
           <div className="text-base sm:text-lg font-bold font-mono text-slate-800 mt-1">
             {res.deltaH_gnss >= 0 ? '+' : ''}

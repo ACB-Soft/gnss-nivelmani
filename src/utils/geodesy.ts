@@ -139,7 +139,7 @@ export function exportAdjustmentToExcel(res: AdjustmentResult) {
     ['Toplam Nokta Sayısı:', `${res.points.length} adet`],
     ['Toplam Güzergah Uzunluğu:', `${res.totalDist.toFixed(2)} m (${res.totalDistKm.toFixed(3)} km)`],
     ['Teorik Kot Farkı (ΔHgerçek):', `${res.deltaH_real >= 0 ? '+' : ''}${res.deltaH_real.toFixed(4)} m`],
-    ['GNSS Ölçülen Kot Farkı (ΣΔhGNSS):', `${res.deltaH_gnss >= 0 ? '+' : ''}${res.deltaH_gnss.toFixed(4)} m`],
+    ['GNSS Ölçülen Kot Farkı (ΔHGNSS):', `${res.deltaH_gnss >= 0 ? '+' : ''}${res.deltaH_gnss.toFixed(4)} m`],
     ['Başlangıç Datum Offset (ΔHoffset):', `${res.startOffset >= 0 ? '+' : ''}${res.startOffset.toFixed(4)} m`],
     ['Kapanma Hatası (W):', `${res.W_mm >= 0 ? '+' : ''}${res.W_mm.toFixed(2)} mm (${res.W_meters.toFixed(4)} m)`],
     ['Tolerans Sınırı (T):', `± ${res.T_mm.toFixed(2)} mm (Durum: ${statusText})`],
@@ -213,13 +213,10 @@ export function exportAdjustmentToKML(res: AdjustmentResult) {
       pointType = 'Bitiş Röperi (B)';
     }
 
-    const corrText = idx === 0 ? '-' : (pt.correctionMm >= 0 ? '+' : '') + pt.correctionMm.toFixed(2) + ' mm';
-    const cumCorrText = (pt.cumCorrectionM >= 0 ? '+' : '') + pt.cumCorrectionM.toFixed(4) + ' m';
-
     placemarksXML += `
     <Placemark>
       <name>${pt.id}</name>
-      <description><![CDATA[<b>Tip:</b> ${pointType}<br><b>Dengeli Kot (H):</b> ${pt.adjustedH.toFixed(4)} m<br><b>Düzeltme (v):</b> ${corrText}<br><b>Birikimli Düzeltme:</b> ${cumCorrText}<br><b>Metrik Y (Sağa):</b> ${pt.y.toFixed(3)} m<br><b>Metrik X (Yukarı):</b> ${pt.x.toFixed(3)} m<br><b>Boylam:</b> ${(pt.lon || 0).toFixed(7)}°<br><b>Enlem:</b> ${(pt.lat || 0).toFixed(7)}°]]></description>
+      <description><![CDATA[<b>Tip:</b> ${pointType}<br><b>Dengeli Kot (H):</b> ${pt.adjustedH.toFixed(4)} m<br><b>Metrik Y (Sağa):</b> ${pt.y.toFixed(3)} m<br><b>Metrik X (Yukarı):</b> ${pt.x.toFixed(3)} m]]></description>
       <styleUrl>#${styleId}</styleUrl>
       <Point>
         <coordinates>${(pt.lon || 0).toFixed(7)},${(pt.lat || 0).toFixed(7)},${pt.adjustedH.toFixed(3)}</coordinates>

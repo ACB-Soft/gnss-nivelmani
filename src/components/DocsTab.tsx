@@ -12,7 +12,7 @@ export const DocsTab: React.FC = () => {
             <h2 className="text-xl font-bold text-slate-900">Teknik Dokümantasyon</h2>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Bu sayfa, GNSS Nivelmanı Dengeleme yazılımının temel jeodezik formüllerini, hesap adımlarını, BÖHHBÜY tolerans standartlarını ve PWA çalışma prensiplerini açıklamaktadır.
+            Bu sayfa, GNSS Nivelmanı Dengeleme yazılımının temel jeodezik formüllerini, hesap adımlarını ve tolerans standartlarını açıklamaktadır.
           </p>
         </div>
 
@@ -37,11 +37,11 @@ export const DocsTab: React.FC = () => {
             </div>
             <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
               <strong className="text-slate-800 block mb-1">N (Jeoit Ondülasyonu)</strong>
-              TG-03, TG-09, TG-20 veya global jeoit modellerinden (EGM96, EGM2008) elde edilen jeoit-elipsoit yüksekliği farkıdır.
+              TG-20, EGM-96 gibi jeoit modellerinden elde edilen jeoid-elipsoid yüksekliği farkıdır.
             </div>
             <div className="bg-slate-50 p-3 rounded-lg border border-slate-200">
               <strong className="text-slate-800 block mb-1">H (Ortometrik Yükseklik)</strong>
-              Geoid referans yüzeyinden (çekim alanı dik doğrultusu boyunca) olan gerçek fiziksel nivelman yüksekliğidir.
+              Jeoid referans yüzeyinden (çekim alanı dik doğrultusu boyunca) olan gerçek fiziksel nivelman yüksekliğidir.
             </div>
           </div>
         </div>
@@ -70,19 +70,19 @@ export const DocsTab: React.FC = () => {
             </div>
 
             <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-1.5">
-              <div className="font-bold text-sky-700 text-sm">2. Ölçülen GNSS Kot Farkı (&Sigma;&Delta;h<sub>GNSS</sub>)</div>
+              <div className="font-bold text-sky-700 text-sm">2. Ölçülen GNSS Kot Farkı (&Delta;H<sub>GNSS</sub>)</div>
               <div className="text-base font-bold text-slate-900 bg-white p-2.5 rounded border border-slate-300">
-                &Sigma;&Delta;h<sub>GNSS</sub> = (h<sub>B</sub> - N<sub>B</sub>) - (h<sub>A</sub> - N<sub>A</sub>)
+                &Delta;H<sub>GNSS</sub> = (h<sub>B</sub> - N<sub>B</sub>) - (h<sub>A</sub> - N<sub>A</sub>)
               </div>
               <p className="text-[11px] font-sans text-slate-500">
-                GNSS ölçümleri ve jeoit ondülasyonu ile elde edilen ham ortometrik yükseklik farkıdır.
+                GNSS ölçümleri ve jeoid ondülasyonu ile elde edilen ham ortometrik yükseklik farkıdır.
               </p>
             </div>
 
             <div className="bg-slate-50 p-4 rounded-lg border border-slate-200 space-y-1.5">
               <div className="font-bold text-sky-700 text-sm">3. Kapanma Hatası (W)</div>
               <div className="text-base font-bold text-slate-900 bg-white p-2.5 rounded border border-slate-300">
-                W = &Delta;H<sub>gerçek</sub> - &Sigma;&Delta;h<sub>GNSS</sub> [m]
+                W = &Delta;H<sub>gerçek</sub> - &Delta;H<sub>GNSS</sub> [m]
               </div>
               <div className="text-base font-bold text-slate-900 bg-white p-2.5 rounded border border-slate-300">
                 W<sub>mm</sub> = W &middot; 1000 [mm]
@@ -95,7 +95,7 @@ export const DocsTab: React.FC = () => {
                 &Delta;H<sub>offset</sub> = H<sub>A</sub> - (h<sub>A</sub> - N<sub>A</sub>)
               </div>
               <p className="text-[11px] font-sans text-slate-500">
-                Başlangıç röperinin tanımlı kotu ile ölçülen ham kotu arasındaki sabit sistem kaymasıdır.
+                Başlangıç röperinin tanımlı (onaylı) kotu ile ölçülen ham kotu arasındaki sabit sistem kaymasıdır.
               </p>
             </div>
           </div>
