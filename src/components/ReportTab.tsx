@@ -51,7 +51,7 @@ export const ReportTab: React.FC<ReportTabProps> = ({ results }) => {
           {/* Report Header */}
           <div className="text-center border-b border-slate-300 pb-4">
             <h1 className="text-xl font-bold uppercase tracking-wider text-slate-900">
-              GNSS NİVELMANI HESABI
+              NİVELMAN HESABI
             </h1>
             <p className="text-xs text-slate-600 mt-1 font-semibold">GÜZERGAH DENGELEME RAPORU</p>
             <div className="flex justify-between items-center text-[11px] text-slate-500 mt-4 px-2">
@@ -59,7 +59,7 @@ export const ReportTab: React.FC<ReportTabProps> = ({ results }) => {
                 <strong>Rapor Tarihi:</strong> {today}
               </span>
               <span>
-                <strong>Yazılım:</strong> ACB Maps - GNSS Nivelmanı
+                <strong>Yazılım:</strong> ACB Maps - Nivelman Hesabı
               </span>
             </div>
           </div>

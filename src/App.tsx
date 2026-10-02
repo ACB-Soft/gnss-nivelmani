@@ -89,15 +89,15 @@ export default function App() {
             <div className="flex items-center space-x-3.5">
               <img
                 src="./icon.svg"
-                alt="GNSS Nivelman Logo"
+                alt="Nivelman Hesabı Logo"
                 className="w-12 h-12 sm:w-14 sm:h-14 object-contain shrink-0 drop-shadow-md hover:scale-105 transition-transform"
               />
               <div>
                 <h1 className="text-lg sm:text-xl font-bold tracking-tight text-white">
-                  GNSS NİVELMANI HESABI
+                  Nivelman Hesabı
                 </h1>
                 <p className="text-xs text-slate-400 hidden sm:block">
-                  Dayalı GNSS Yükseklik Güzergahı Dengelemesi
+                  Dayalı GNSS Nivelmanı Uygulaması
                 </p>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-slate-900 text-slate-400 text-xs py-4 text-center border-t border-slate-800 no-print mt-auto">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <span>ACB Maps - GNSS Nivelmanı v1.0</span>
+          <span>ACB Maps - Nivelman Hesabı v1.0</span>
         </div>
       </footer>
 
