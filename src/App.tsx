@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GNSSPoint, AdjustmentResult, CRSSystem } from './types/gnss';
 import { performAdjustment } from './utils/geodesy';
 import { DataTableTab } from './components/DataTableTab';
@@ -27,6 +27,17 @@ import {
 export default function App() {
   const [activeTab, setActiveTab] = useState<'data' | 'map' | 'results' | 'report' | 'docs'>('data');
   const [points, setPoints] = useState<GNSSPoint[]>([]);
+
+  useEffect(() => {
+    document.title = 'Nivelman Hesabı';
+    try {
+      if (window.top && window.top !== window) {
+        window.top.document.title = 'Nivelman Hesabı';
+      }
+    } catch {
+      // Cross-origin iframe restriction, safely ignore
+    }
+  }, []);
 
   const [startKnownH, setStartKnownH] = useState<string>('');
   const [endKnownH, setEndKnownH] = useState<string>('');

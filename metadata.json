@@ -1,6 +1,6 @@
 {
-  "name": "GNSS Nivelman Hesabı PWA",
-  "description": "Dayalı GNSS yükseklik güzergahı dengelemesi, interaktif harita, Excel & KML dışa aktarımı ve PWA çevrimdışı çalışma desteği.",
+  "name": "Nivelman Hesabı",
+  "description": "Dayalı GNSS Nivelmanı Uygulaması",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
